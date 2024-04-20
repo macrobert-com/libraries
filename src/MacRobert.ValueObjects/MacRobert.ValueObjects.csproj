@@ -6,10 +6,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MacRobert.ResultPattern" Version="$(Version)" />
-  </ItemGroup>
-
   <PropertyGroup>
     <!-- Specific NuGet properties -->
     <PackageId>MacRobert.ValueObjects</PackageId>
@@ -26,7 +22,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="../../../icon.png" Pack="true" PackagePath="\"/>
+    <None Include="../../../icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MacRobert.ResultPattern\Macrobert.ResultPattern.csproj" />
   </ItemGroup>  
 
 </Project>

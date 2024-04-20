@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\UriPathBuilder\MacRobert.UriPathBuilder.csproj" />
+    <ProjectReference Include="..\..\src\MacRobert.UriPathBuilder\MacRobert.UriPathBuilder.csproj" />
   </ItemGroup>
 
 </Project>

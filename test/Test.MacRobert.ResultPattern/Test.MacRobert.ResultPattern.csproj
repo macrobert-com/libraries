@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ResultPattern\Macrobert.ResultPattern.csproj" />
+    <ProjectReference Include="..\..\src\MacRobert.ResultPattern\Macrobert.ResultPattern.csproj" />
   </ItemGroup>
 
 </Project>

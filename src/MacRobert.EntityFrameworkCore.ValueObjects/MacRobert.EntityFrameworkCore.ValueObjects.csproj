@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MacRobert.Reflection" Version="$(Version)" />
-    <PackageReference Include="MacRobert.EntityFrameworkCore" Version="$(Version)" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.*" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MacRobert.EntityFrameworkCore\MacRobert.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\MacRobert.Reflection\MacRobert.Reflection.csproj" />
     <ProjectReference Include="..\MacRobert.ValueObjects\MacRobert.ValueObjects.csproj" />
   </ItemGroup>
 

@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\InterpolatedString\MacRobert.InterpolatedString.csproj" />
+    <ProjectReference Include="..\..\src\MacRobert.InterpolatedString\MacRobert.InterpolatedString.csproj" />
   </ItemGroup>
 
 </Project>
