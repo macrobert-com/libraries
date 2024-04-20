@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MacRobert.ResultPattern" Version="$(Version)" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!-- Specific NuGet properties -->
+    <PackageId>MacRobert.ValueObjects</PackageId>
+    <PackageDescription>Utilities for Value Objects</PackageDescription>
+    <PackageProjectUrl>https://github.com/macrobert-com/ValueObjects</PackageProjectUrl>
+  </PropertyGroup>  
+
+  <PropertyGroup>
+    <!-- Generic NuGet properties -->
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../../icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>  
+
+</Project>

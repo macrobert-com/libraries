@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <Version>$(MACROBERT_LIB_VERSION)</Version>
+    <!-- Common Project tags-->
+    <Authors>Martin MacRobert</Authors>
+    <Company>MacRobert.com</Company>
+    <Copyright>Copyright &#xA9; $(Year) MacRobert.com</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
+  </PropertyGroup>
+  
+</Project>
