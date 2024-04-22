@@ -16,7 +16,7 @@ public static class ModelConfigurationBuilderExtensions
             {
                 builder
                     .Properties(type)
-                    .HaveConversion(typeof(StronglyTypedIdToStringConverter<,>).MakeGenericType(type, typeof(T)));
+                    .HaveConversion(typeof(StronglyTypedIdToValueConverter<,>).MakeGenericType(type, typeof(T)));
             }
         };
 
