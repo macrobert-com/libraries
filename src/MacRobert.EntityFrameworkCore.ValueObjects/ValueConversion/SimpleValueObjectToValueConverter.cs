@@ -5,10 +5,9 @@ namespace MacRobert.EntityFrameworkCore.ValueObjects.ValueConversion;
 
 public class SimpleValueObjectToValueConverter<T, U> : ValueConverter<T, U> where T : ISimpleValueObject<U>
 {
-    public SimpleValueObjectToValueConverter(ConverterMappingHints? mappingHints = null)
+    public SimpleValueObjectToValueConverter()
         : base(
             convertToProviderExpression: x => x.Value,
-            convertFromProviderExpression: x => (T)Activator.CreateInstance(typeof(T), new object[] { x })!,
-            mappingHints)
+            convertFromProviderExpression: x => (T)Activator.CreateInstance(typeof(T), new object[] { x })!)
     { }
 }
