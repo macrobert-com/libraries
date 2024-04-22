@@ -16,6 +16,28 @@ public static class ModelConfigurationBuilderExtensions
             {
                 builder
                     .Properties(type)
+                    .HaveConversion(typeof(StronglyTypedIdToStringConverter<,>).MakeGenericType(type, typeof(T)));
+            }
+        };
+
+        foreach (var assembly in assemblies)
+        {
+            var scanner = new AssemblyScanner(assembly);
+            var typedIdTypes = scanner.ScanForImplementations<IStronglyTypedId<T>>();
+            configureStronglyTypedIds(typedIdTypes);
+        }
+
+        return builder;
+    }
+
+    public static ModelConfigurationBuilder ConfigureStronglyTypedIdsAsString<T>(this ModelConfigurationBuilder builder, IEnumerable<Assembly> assemblies, int fieldWidth)
+    {
+        Action<IReadOnlyCollection<Type>> configureStronglyTypedIds = stronglyTypedIds =>
+        {
+            foreach (var type in stronglyTypedIds)
+            {
+                builder
+                    .Properties(type)
                     .HaveConversion(typeof(StronglyTypedIdToStringConverter<,>).MakeGenericType(type, typeof(T)))
                     .HaveMaxLength(fieldWidth);
             }
