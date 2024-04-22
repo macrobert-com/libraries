@@ -8,7 +8,7 @@ namespace MacRobert.EntityFrameworkCore.StronglyTypedIds.ValueConversion;
 
 public static class ModelConfigurationBuilderExtensions
 {
-    public static ModelConfigurationBuilder ConfigureStronglyTypedIds<T>(this ModelConfigurationBuilder builder, IEnumerable<Assembly> assemblies, int fieldWidth)
+    public static ModelConfigurationBuilder ConfigureStronglyTypedIds<T>(this ModelConfigurationBuilder builder, IEnumerable<Assembly> assemblies)
     {
         Action<IReadOnlyCollection<Type>> configureStronglyTypedIds = stronglyTypedIds =>
         {
