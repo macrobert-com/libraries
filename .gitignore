@@ -399,3 +399,4 @@ FodyWeavers.xsd
 /src/MacRobert.AspNetCore.StronglyTypedIds/Properties/launchSettings.json
 /src/MacRobert.EntityFrameworkCore.StronglyTypedIds/Properties/launchSettings.json
 /test/Test.MacRobert.AspNetCore.StronglyTypedIds/Properties/launchSettings.json
+/push_packages.bat
