@@ -1,6 +1,8 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 
+namespace MacRobert.CodeGeneration;
+
 public static class TypeExtensions
 {
     public static ContractContext CollectContractProperties(this Type t)
