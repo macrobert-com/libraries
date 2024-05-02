@@ -1,4 +1,6 @@
-﻿public static class CommonTypes
+﻿namespace MacRobert.CodeGeneration;
+
+public static class CommonTypes
 {
     public static readonly Lazy<Dictionary<Type, string>> PrimitiveNameMap = new Lazy<Dictionary<Type, string>>(() =>
         new Dictionary<Type, string>()
