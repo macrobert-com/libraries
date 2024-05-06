@@ -9,12 +9,12 @@ public static class TypeExtensions
     public static ContractContext CollectContractProperties(this Type t)
     {
         var result = new ContractContext();
-        t.ForEachContractProperty(p => {
+        t.ForEachContractProperty( (p,t) => {
             bool hasGetter = p.CanRead;
             bool hasSetter = p.CanWrite;
             bool isInitOnly = p.IsInitOnly();
 
-            result.ContractProperties.Add(new ContractPropertyInfo(TransformTypeName(p, p.PropertyType), p.Name, hasGetter, hasSetter, isInitOnly));
+            result.ContractProperties.Add(new ContractPropertyInfo(TransformTypeName(p, p.PropertyType), p.Name, hasGetter, hasSetter, isInitOnly, t));
         });
         return result;
     }
@@ -60,12 +60,12 @@ public static class TypeExtensions
         return CommonTypes.TryAsPrimitive(propertyReturnType);
     }
 
-    public static void ForEachContractProperty(this Type t, Action<PropertyInfo> action)
+    public static void ForEachContractProperty(this Type t, Action<PropertyInfo, Type> action)
     {
         var properties = t.GetProperties().Where(HasContractAttribute);
         foreach (var property in properties)
         {
-            action(property);
+            action(property, property.GetCustomAttribute<ForeignContractAttribute>()?.ForeignType!);
         }
     }
 
