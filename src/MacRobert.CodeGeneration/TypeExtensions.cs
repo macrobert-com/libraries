@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using MacRobert.CodeGeneration.Contracts;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 
 namespace MacRobert.CodeGeneration;
@@ -61,11 +62,18 @@ public static class TypeExtensions
 
     public static void ForEachContractProperty(this Type t, Action<PropertyInfo> action)
     {
-        var properties = t.GetProperties().Where(p => p.GetCustomAttribute<ContractAttribute>() != null);
+        var properties = t.GetProperties().Where(HasContractAttribute);
         foreach (var property in properties)
         {
             action(property);
         }
+    }
+
+    private static bool HasContractAttribute(PropertyInfo p)
+    {
+        return 
+            p.GetCustomAttribute<ContractAttribute>() != null ||
+            p.GetCustomAttribute<ForeignContractAttribute>() != null;
     }
 
     public static bool IsNullable(this Type type)
