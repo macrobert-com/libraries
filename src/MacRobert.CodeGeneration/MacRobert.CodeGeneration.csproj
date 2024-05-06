@@ -23,7 +23,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="../../../icon.png" Pack="true" PackagePath="\"/>
+    <None Include="../../../icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MacRobert.CodeGeneration.Contracts\MacRobert.CodeGeneration.Contracts.csproj" />
   </ItemGroup>  
   
 </Project>
