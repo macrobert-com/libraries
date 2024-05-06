@@ -9,13 +9,22 @@ public static class TypeExtensions
     public static ContractContext CollectContractProperties(this Type t)
     {
         var result = new ContractContext();
+        var foreignTypes = new HashSet<Type>();
         t.ForEachContractProperty( (p,t) => {
             bool hasGetter = p.CanRead;
             bool hasSetter = p.CanWrite;
             bool isInitOnly = p.IsInitOnly();
 
             result.ContractProperties.Add(new ContractPropertyInfo(TransformTypeName(p, p.PropertyType), p.Name, hasGetter, hasSetter, isInitOnly, t));
+            if (t != null)
+            {
+                foreignTypes.Add(t);
+            }
         });
+        foreach (var type in foreignTypes)
+        {
+            result.ForeignTypes.Add(type);
+        }
         return result;
     }
 
