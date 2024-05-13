@@ -10,22 +10,49 @@ public static class TypeExtensions
     {
         var result = new ContractContext();
         var foreignTypes = new HashSet<Type>();
+        var enumTypes = new HashSet<Type>();
+
         t.ForEachContractProperty( (p,t) => {
             bool hasGetter = p.CanRead;
             bool hasSetter = p.CanWrite;
             bool isInitOnly = p.IsInitOnly();
 
-            result.ContractProperties.Add(new ContractPropertyInfo(TransformTypeName(p, p.PropertyType), p.Name, hasGetter, hasSetter, isInitOnly, t));
+            result.ContractProperties.Add(new ContractPropertyInfo(TransformTypeName(p, p.PropertyType), p.Name, hasGetter, hasSetter, isInitOnly, t, p.PropertyType));
             if (t != null)
             {
-                foreignTypes.Add(t);
+                result.ForeignTypes.Add(t);
+            }
+            if (p.IsEnumType())
+            {
+                result.EnumTypes.Add(p.GetEnumType());
             }
         });
-        foreach (var type in foreignTypes)
-        {
-            result.ForeignTypes.Add(type);
-        }
+
         return result;
+    }
+
+    public static bool IsEnumType(this PropertyInfo property) => IsEnumType(property.PropertyType);
+
+    public static bool IsEnumType(this Type t)
+    {
+        var x = (Nullable.GetUnderlyingType(t)?.IsEnum ?? false);
+        var y = t.IsEnum;
+        return t.IsEnum || (Nullable.GetUnderlyingType(t)?.IsEnum ?? false);
+    }
+
+    public static Type GetEnumType(this PropertyInfo property)
+    {
+        if (property.IsNullable())
+        {
+            return Nullable.GetUnderlyingType(property.PropertyType)!;
+        }
+
+        return property.PropertyType;
+    }
+
+    public static Type GetEnumType(this Type t)
+    {
+        return Nullable.GetUnderlyingType(t) ?? t;
     }
 
     private static string? TransformNullableName(Type propertyType)
