@@ -9,22 +9,20 @@ public static class TypeExtensions
     public static ContractContext CollectContractProperties(this Type t)
     {
         var result = new ContractContext();
-        var foreignTypes = new HashSet<Type>();
-        var enumTypes = new HashSet<Type>();
 
-        t.ForEachContractProperty( (p,t) => {
-            bool hasGetter = p.CanRead;
-            bool hasSetter = p.CanWrite;
-            bool isInitOnly = p.IsInitOnly();
+        t.ForEachContractProperty( (propInfo, foreignContractInfo) => {
+            bool hasGetter = propInfo.CanRead;
+            bool hasSetter = propInfo.CanWrite;
+            bool isInitOnly = propInfo.IsInitOnly();
 
-            result.ContractProperties.Add(new ContractPropertyInfo(TransformTypeName(p, p.PropertyType), p.Name, hasGetter, hasSetter, isInitOnly, t, p.PropertyType));
-            if (t != null)
+            result.ContractProperties.Add(new ContractPropertyInfo(TransformTypeName(propInfo, propInfo.PropertyType), propInfo.Name, hasGetter, hasSetter, isInitOnly, foreignContractInfo, propInfo.PropertyType));
+            if (foreignContractInfo != null)
             {
-                result.ForeignTypes.Add(t);
+                result.ForeignTypes.Add(foreignContractInfo);
             }
-            if (p.IsEnumType())
+            if (propInfo.IsEnumType())
             {
-                result.EnumTypes.Add(p.GetEnumType());
+                result.EnumTypes.Add(propInfo.GetEnumType());
             }
         });
 
@@ -96,12 +94,12 @@ public static class TypeExtensions
         return CommonTypes.TryAsPrimitive(propertyReturnType);
     }
 
-    public static void ForEachContractProperty(this Type t, Action<PropertyInfo, Type> action)
+    public static void ForEachContractProperty(this Type t, Action<PropertyInfo, ForeignContractInfo> action)
     {
         var properties = t.GetProperties().Where(HasContractAttribute);
         foreach (var property in properties)
         {
-            action(property, property.GetCustomAttribute<ForeignContractAttribute>()?.ForeignType!);
+            action(property, property.GetCustomAttribute<ForeignContractAttribute>()?.ForeignContractInfo!);
         }
     }
 
