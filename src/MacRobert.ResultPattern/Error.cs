@@ -1,52 +1,74 @@
-﻿namespace Macrobert.ResultPattern;
+﻿using System;
 
-public class Error : IEquatable<Error>
+namespace Macrobert.ResultPattern
 {
-    public static readonly Error None = new(string.Empty, string.Empty);
-    public static readonly Error NullValue = new("Error.NullValue", "The specified result value is null.");
-
-    public Error(string code, string message)
+    public class Error : IEquatable<Error>
     {
-        Code = code;
-        Message = message;
-    }
+        public static readonly Error None = new Error(string.Empty, string.Empty);
+        public static readonly Error NullValue = new Error("Error.NullValue", "The specified result value is null.");
 
-    public string Code { get; }
-
-    public string Message { get; }
-
-    public static implicit operator string(Error error) => error.Code;
-
-    public static bool operator ==(Error? a, Error? b)
-    {
-        if (a is null && b is null)
+        public Error(string code, string message)
         {
-            return true;
+            Code = code;
+            Message = message;
         }
 
-        if (a is null || b is null)
+        public string Code { get; }
+
+        public string Message { get; }
+
+        public static implicit operator string(Error error) => error.Code;
+
+        public static bool operator ==(Error a, Error b)
         {
-            return false;
+            if (a is null && b is null)
+            {
+                return true;
+            }
+
+            if (a is null || b is null)
+            {
+                return false;
+            }
+
+            return a.Equals(b);
         }
 
-        return a.Equals(b);
+        public static bool operator !=(Error a, Error b) => !(a == b);
+
+        public virtual bool Equals(Error other)
+        {
+            if (other is null)
+            {
+                return false;
+            }
+
+            return Code == other.Code && Message == other.Message;
+        }
+
+        public override bool Equals(object obj) => obj is Error error && Equals(error);
+
+        public override int GetHashCode() => HashCodeHelper.Combine(Code, Message);
+
+        public override string ToString() => Code;
     }
 
-    public static bool operator !=(Error? a, Error? b) => !(a == b);
-
-    public virtual bool Equals(Error? other)
+    public static class HashCodeHelper // HashCode.Combine not available in .net 2.0
     {
-        if (other is null)
+        public static int Combine(params object[] values)
         {
-            return false;
-        }
+            const int seed = 17;
+            const int multiplier = 31;
+            int hash = seed;
 
-        return Code == other.Code && Message == other.Message;
+            foreach (var value in values)
+            {
+                hash = (hash * multiplier) + (value?.GetHashCode() ?? 0);
+            }
+
+            return hash;
+        }
     }
 
-    public override bool Equals(object? obj) => obj is Error error && Equals(error);
-
-    public override int GetHashCode() => HashCode.Combine(Code, Message);
-
-    public override string ToString() => Code;
 }
+

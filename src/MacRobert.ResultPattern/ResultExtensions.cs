@@ -1,28 +1,32 @@
-﻿namespace Macrobert.ResultPattern;
+﻿using System;
 
-public static class ResultExtensions
+namespace Macrobert.ResultPattern
 {
-    public static Result<T> Ensure<T>(
-        this Result<T> result,
-        Func<T, bool> predicate,
-        Error error)
+    public static class ResultExtensions
     {
-        if (result.IsFailure)
+        public static Result<T> Ensure<T>(
+            this Result<T> result,
+            Func<T, bool> predicate,
+            Error error)
         {
-            return result;
+            if (result.IsFailure)
+            {
+                return result;
+            }
+
+            return predicate(result.Value) ?
+                result :
+                Result.Failure<T>(error);
         }
 
-        return predicate(result.Value) ?
-            result :
-            Result.Failure<T>(error);
-    }
-
-    public static Result<TOut> Map<TIn, TOut>(
-        this Result<TIn> result,
-        Func<TIn, TOut> mappingFunc)
-    {
-        return result.IsSuccess ?
-            Result.Success(mappingFunc(result.Value)) :
-            Result.Failure<TOut>(result.Errors);
+        public static Result<TOut> Map<TIn, TOut>(
+            this Result<TIn> result,
+            Func<TIn, TOut> mappingFunc)
+        {
+            return result.IsSuccess ?
+                Result.Success(mappingFunc(result.Value)) :
+                Result.Failure<TOut>(result.Errors);
+        }
     }
 }
+
