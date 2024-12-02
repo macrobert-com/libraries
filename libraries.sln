@@ -52,7 +52,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacRobert.CodeGeneration.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacRobert.Collections", "src\MacRobert.Collections\MacRobert.Collections.csproj", "{E39F205A-4183-4602-956B-630EC4C3B7C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MacRobert.Collections", "test\Test.MacRobert.Collections\Test.MacRobert.Collections.csproj", "{FE859957-D915-4AA2-B5C6-700589799C6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.MacRobert.Collections", "test\Test.MacRobert.Collections\Test.MacRobert.Collections.csproj", "{FE859957-D915-4AA2-B5C6-700589799C6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacRobert.ApiKeys", "src\MacRobert.ApiKeys\MacRobert.ApiKeys.csproj", "{0219C61B-CB9E-4CBE-B80D-7ACA4190CEF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MacRobert.ApiKeys", "test\Test.MacRobert.ApiKeys\Test.MacRobert.ApiKeys.csproj", "{CFBDE22A-2E53-4450-BE61-34B31C0B616B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -140,6 +144,14 @@ Global
 		{FE859957-D915-4AA2-B5C6-700589799C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE859957-D915-4AA2-B5C6-700589799C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE859957-D915-4AA2-B5C6-700589799C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0219C61B-CB9E-4CBE-B80D-7ACA4190CEF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0219C61B-CB9E-4CBE-B80D-7ACA4190CEF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0219C61B-CB9E-4CBE-B80D-7ACA4190CEF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0219C61B-CB9E-4CBE-B80D-7ACA4190CEF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFBDE22A-2E53-4450-BE61-34B31C0B616B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBDE22A-2E53-4450-BE61-34B31C0B616B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFBDE22A-2E53-4450-BE61-34B31C0B616B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFBDE22A-2E53-4450-BE61-34B31C0B616B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +177,8 @@ Global
 		{E6369E2C-4A8A-4469-A4C5-2B2557ACCBC3} = {88985DFC-A882-4E0B-AF29-42F95DA7AB2B}
 		{E39F205A-4183-4602-956B-630EC4C3B7C0} = {88985DFC-A882-4E0B-AF29-42F95DA7AB2B}
 		{FE859957-D915-4AA2-B5C6-700589799C6C} = {2CFCE07C-8852-4D7C-B47B-10642E27C7A0}
+		{0219C61B-CB9E-4CBE-B80D-7ACA4190CEF7} = {88985DFC-A882-4E0B-AF29-42F95DA7AB2B}
+		{CFBDE22A-2E53-4450-BE61-34B31C0B616B} = {2CFCE07C-8852-4D7C-B47B-10642E27C7A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC3CB502-A14B-45EC-B058-57401C00D667}

@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- NuGet properties -->
+    <PackageId>MacRobert.ApiKeys</PackageId>
+    <PackageDescription>Utilities for creating Api Keys</PackageDescription>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MacRobert.ResultPattern\MacRobert.ResultPattern.csproj" />
+  </ItemGroup>  
+
+  <PropertyGroup>
+    <!-- Generic NuGet properties -->
+    <IsPackable>true</IsPackable>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.ApiKeys</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../../icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>  
+  
+</Project>
