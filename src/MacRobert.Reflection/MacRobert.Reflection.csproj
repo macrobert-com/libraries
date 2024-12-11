@@ -12,7 +12,7 @@
     <PackageDescription>Utilities for reflecting into assemblies.</PackageDescription>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <RepositoryUrl>https://github.com/macrobert-com/Reflection</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.Reflection</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>

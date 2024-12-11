@@ -12,7 +12,7 @@
     <PackageDescription>Make brace-interpolated-strings re-usable in .NET</PackageDescription>    
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <RepositoryUrl>https://github.com/macrobert-com/InterpolatedString</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.InterpolatedString</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>

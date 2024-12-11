@@ -10,7 +10,7 @@
     <!-- Specific NuGet properties -->
     <PackageId>MacRobert.StronglyTypedIds</PackageId>
     <PackageDescription>Utilities for creating strongly typed ids</PackageDescription>
-    <PackageProjectUrl>https://github.com/macrobert-com/StronglyTypedIds</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.StronglyTypedIds</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup>

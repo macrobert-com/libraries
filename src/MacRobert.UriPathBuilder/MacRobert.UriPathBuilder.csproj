@@ -12,10 +12,11 @@
     <PackageDescription>Create complex Uri paths using fluent syntax</PackageDescription>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <RepositoryUrl>https://github.com/macrobert-com/UriPathBuilder</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.UriPathBuilder</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
-  </PropertyGroup>
+  
+</PropertyGroup>
 
   <ItemGroup>
     <None Include="../../../icon.png" Pack="true" PackagePath="\"/>

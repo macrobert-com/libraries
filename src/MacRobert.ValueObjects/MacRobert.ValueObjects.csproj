@@ -10,8 +10,8 @@
     <!-- Specific NuGet properties -->
     <PackageId>MacRobert.ValueObjects</PackageId>
     <PackageDescription>Utilities for Value Objects</PackageDescription>
-    <PackageProjectUrl>https://github.com/macrobert-com/ValueObjects</PackageProjectUrl>
-  </PropertyGroup>  
+    <PackageProjectUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.ValueObjects</PackageProjectUrl>  
+</PropertyGroup>  
 
   <PropertyGroup>
     <!-- Generic NuGet properties -->

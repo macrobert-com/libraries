@@ -24,6 +24,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.AspNetCore.StronglyTypedIds</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

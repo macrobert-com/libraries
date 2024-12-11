@@ -14,7 +14,7 @@
     <!-- Specific NuGet properties -->
     <PackageId>MacRobert.EntityFrameworkCore</PackageId>
     <PackageDescription>Shared EF Core utilities</PackageDescription>
-    <PackageProjectUrl>https://github.com/macrobert-com/EntityFrameworkCore</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.EntityFrameworkCore</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup>

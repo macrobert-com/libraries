@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MacRobert.Reflection" Version="1.0.7" />
-    <PackageReference Include="MacRobert.EntityFrameworkCore" Version="1.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.*" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MacRobert.EntityFrameworkCore\MacRobert.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\MacRobert.Reflection\MacRobert.Reflection.csproj" />
     <ProjectReference Include="..\MacRobert.StronglyTypedIds\MacRobert.StronglyTypedIds.csproj" />
   </ItemGroup>
   
@@ -21,6 +21,7 @@
     <PackageId>MacRobert.EntityFrameworkCore.StronglyTypedIds</PackageId>
     <PackageDescription>Utilities for managing strongly typed ids in AspNetCore applications that use the Entity Framework</PackageDescription>
     <OutputType>Library</OutputType>
+    <PackageProjectUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.EntityFrameworkCore.StronglyTypedIds</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup>

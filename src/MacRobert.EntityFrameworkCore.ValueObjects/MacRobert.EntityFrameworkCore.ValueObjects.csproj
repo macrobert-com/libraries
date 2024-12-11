@@ -20,7 +20,7 @@
     <!-- Specific NuGet properties -->
     <PackageId>MacRobert.EntityFrameworkCore.ValueObjects</PackageId>
     <PackageDescription>Utilities for Value Objects</PackageDescription>
-    <PackageProjectUrl>https://github.com/macrobert-com/ValueObjects</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.ValueObjects</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup>

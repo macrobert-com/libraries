@@ -24,7 +24,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
-    <RepositoryUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.ApiKeys</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.ApiKeys</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

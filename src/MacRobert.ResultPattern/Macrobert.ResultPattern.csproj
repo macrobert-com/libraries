@@ -11,7 +11,7 @@
     <PackageDescription>An implementation of the canonical Result-Pattern returning a didactic result instead of an exception.</PackageDescription>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <RepositoryUrl>https://github.com/macrobert-com/ResultPattern</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.ResultPattern</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>  
