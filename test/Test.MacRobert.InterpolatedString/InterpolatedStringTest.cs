@@ -8,6 +8,7 @@ public class InterpolatedStringTest
     readonly Ulid instructorId = Ulid.Parse("01HD5PRGN9QTB5M5YG5C0A31ME");
 
     const string template0 = "~/api/v1.0/companies/{companyId}/instructors/{instructorId}";
+    const string template1 = "~/api/v1.0/tenants/{tenantId}/instructors/{instructorId}";
     const string expected0 = "~/api/v1.0/companies/01HD5PRGN8SDPGZSCTE01194V1/instructors/01HD5PRGN9QTB5M5YG5C0A31ME";
 
     [Fact]
@@ -40,12 +41,12 @@ public class InterpolatedStringTest
     [Fact]
     public void Strict_InterpolatedString_Will_Fail_If_Property_Not_Supplied()
     {
-        var templateString0 = new InterpolatedString(template0);
+        var templateString0 = new InterpolatedString(template1);
         var data0 = new { instructorId = instructorId };
 
         var ex = Assert.Throws<ArgumentException>(() => templateString0.Interpolate(data0, strict: true));
 
-        Assert.Contains("Property 'companyId' does not exist on type", ex.Message);
+        Assert.Contains("Property 'tenantId' does not exist on type", ex.Message);
     }
 
     const string expected1 = "~/api/v1.0/companies//instructors/01HD5PRGN9QTB5M5YG5C0A31ME";
@@ -59,13 +60,13 @@ public class InterpolatedStringTest
         Assert.Equal(expected1, templateString0.Interpolate(data0, strict: false));
     }
 
-    const string template1 = "~/api/v1.0/companies/{companyId}/instructors";
+    const string template2 = "~/api/v1.0/companies/{companyId}/instructors";
     const string expected2 = "~/api/v1.0/companies/01HD5PRGN8SDPGZSCTE01194V1/instructors";
 
     [Fact]
     public void More_Properties_Than_Tokens_will_Be_OK()
     {
-        var templateString1 = new InterpolatedString(template1);
+        var templateString1 = new InterpolatedString(template2);
         var data0 = new { instructorId, companyId };
 
         Assert.Equal(expected2, templateString1.Interpolate(data0));
@@ -79,7 +80,7 @@ public class InterpolatedStringTest
 
         Assert.Equal(expected0, templateString0.Interpolate(data0));
 
-        var templateString1 = new InterpolatedString(template1);
+        var templateString1 = new InterpolatedString(template2);
         Assert.Equal(expected2, templateString1.Interpolate(data0));
     }
 }
