@@ -17,6 +17,7 @@
     <PackageId>MacRobert.HostBuilderExtensions</PackageId>
     <PackageDescription>Utilities to simplify working with appsetting.json across multiple environments</PackageDescription>
     <PackageProjectUrl>https://github.com/macrobert-com/libraries/tree/main/src/MacRobert.HostBuilderExtensions</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup>
